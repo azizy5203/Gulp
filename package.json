@@ -1,0 +1,20 @@
+{
+  "name": "gulpzero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp --gulpfile gulpfile.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^6.0.0",
+    "sass": "^1.83.0"
+  }
+}
