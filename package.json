@@ -5,16 +5,20 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "gulp --gulpfile gulpfile.js"
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^3.0.3",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-pug": "^5.0.0",
     "gulp-sass": "^6.0.0",
+    "lite-server": "^2.6.1",
     "sass": "^1.83.0"
   }
 }
