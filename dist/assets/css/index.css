@@ -208,7 +208,7 @@ body {
 
 .about {
   height: 100vh;
-  background-color: rgb(250, 130, 60);
+  background-image: url("/assets/imgs/cat.jpg");
   view-timeline: --second-layer block;
   animation-timeline: --second-layer;
   animation-range: 140% 240%;
