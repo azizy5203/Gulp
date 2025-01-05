@@ -12,7 +12,7 @@ const sass = gulpSass(dartSass);
 
 gulp.task("html", function () {
   return gulp
-    .src("src/*.pug")
+    .src("src/pug/pages/**/*.pug")
     .pipe(
       pug({
         pretty: true,
@@ -23,11 +23,11 @@ gulp.task("html", function () {
 
 gulp.task("sass", function () {
   return gulp
-    .src(["src/assets/scss/index.scss", "src/assets/css/*.css"])
-    .pipe(sass.sync({ style: "compressed" }).on("error", sass.logError))
+    .src(["src/assets/scss/**/index.scss", "src/assets/css/**/*.css"])
+    .pipe(sass.sync({}).on("error", sass.logError))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(concat("index.css"))
-    .pipe(gulp.dest("dist"))
+    .pipe(gulp.dest("./dist/assets/css/"))
     .pipe(bs.stream());
 });
 
@@ -35,7 +35,7 @@ gulp.task("js", function () {
   return gulp
     .src("src/assets/js/*js")
     .pipe(concat("index.js"))
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("./dist/assets/js/"));
 });
 
 gulp.task("dev", function () {
@@ -46,11 +46,11 @@ gulp.task("dev", function () {
   });
 
   gulp.watch(
-    ["src/assets/scss/*.scss", "src/assets/css/*.css"],
+    ["src/assets/scss/**/*.scss", "src/assets/css/**/*.css"],
     gulp.series("sass")
   );
-  gulp.watch("src/assets/js/*.js", gulp.series("js"));
-  gulp.watch("src/*.pug", gulp.series("html")).on("change", bs.reload);
+  gulp.watch("src/assets/js/*.js", gulp.series("js")).on("change", bs.reload);
+  gulp.watch("src/pug/**/*.pug", gulp.series("html")).on("change", bs.reload);
 });
 
 // run all tasks

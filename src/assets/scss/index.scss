@@ -1,1 +1,5 @@
-@use "header";
+@import "variables";
+@import "fonts";
+@import "general";
+@import "components/index";
+@import "pages/index";

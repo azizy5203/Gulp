@@ -4,17 +4,34 @@
     <title>My Pug Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <script defer src="/assets/js/index.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Welcome to My Pug Template</h1>
+    <header class="header">
+      <nav class="header__nav"><a class="header__logo" href="/">Tempraco</a>
+        <ul class="header__nav-list">
+          <li class="header__nav-item"> <a class="header__nav-link" href="#about">Docs</a></li>
+          <li class="header__nav-item"> <a class="header__nav-link" href="#services">AI Blocks</a></li>
+          <li class="header__nav-item"> <a class="header__nav-link" href="#contact">Demos</a></li>
+          <li class="header__nav-item"> <a class="header__nav-link" href="#contact">Help</a></li>
+          <li class="header__nav-item"> <a class="header__nav-link" href="#contact">Pricing</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <p>This is a simple Pug template example.</p>
+      <section class="hero">
+        <div class="hero__content">
+          <h1 class="hero__title">
+             Umbraco Dashboard Maker</h1>
+          <p class="hero__subtitle">Effortlessly craft your Umbraco Backoffice templates with AI-powered blocks!</p>
+          <button class="button" href="#">Get Started</button>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto nostrum distinctio quisquam?</p>
+      </section>
     </main>
-    <footer>
-      <p>© 2023 My Website</p>
-    </footer>
   </body>
 </html>
