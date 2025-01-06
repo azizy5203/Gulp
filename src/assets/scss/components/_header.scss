@@ -9,10 +9,17 @@
   border-radius: 999px;
 
   width: 75%;
+  box-shadow: 0 1px 10px 1px rgba(145, 144, 144, 0.25);
+  top: 1rem;
+  background-color: white;
 
-  //   animation: showShadow linear both;
-  //   animation-timeline: scroll();
-  //   animation-range: 0vh 5vh;
+  @supports (animation-timeline: scroll()) {
+    width: 100%;
+    background-color: white;
+    box-shadow: none;
+    top: 0;
+    border-radius: 0;
+  }
 
   &__logo {
     font-size: 22px;

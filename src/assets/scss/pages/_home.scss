@@ -1,8 +1,5 @@
 .hero {
   height: 100vh;
-  view-timeline: --first-layer block;
-  animation-timeline: --first-layer;
-  animation-range: entry 100% cover 90%;
   z-index: 5;
   display: flex;
   justify-content: center;
@@ -30,7 +27,6 @@
     background: url("/assets/img/hero-pattern.svg");
     background-size: 120%;
     background-position: center center;
-
     z-index: 3;
   }
 
@@ -58,29 +54,96 @@
 .about {
   height: 100vh;
   background-image: url("/assets/img/cat.png");
-  view-timeline: --second-layer block;
-  animation-timeline: --second-layer;
-  animation-range: 140% 240%;
-  z-index: 4;
-}
-
-section {
-  position: fixed;
-  width: 100%;
-  animation: horizontalScroll linear both;
-  animation-timeline: scroll();
-}
-
-@keyframes horizontalScroll {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-101%);
-  }
 }
 
 main {
   padding-top: 56px;
-  height: 200vh;
+}
+
+@supports (animation-timeline: scroll()) {
+  .hero {
+    height: 100vh;
+    view-timeline: --first-layer block;
+    animation-timeline: --first-layer;
+    animation-range: entry 100% cover 90%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primary;
+
+      z-index: 2;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("/assets/img/hero-pattern.svg");
+      background-size: 120%;
+      background-position: center center;
+
+      z-index: 3;
+    }
+
+    &__content {
+      z-index: 5;
+      position: relative;
+      color: $secondary;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    &__title {
+      // color: $secondary;
+      font-size: 60px;
+    }
+    &__subtitle {
+      max-width: 70%;
+      margin: 0 auto;
+      font-size: 22px;
+    }
+  }
+
+  .about {
+    height: 100vh;
+    background-image: url("/assets/img/cat.png");
+    view-timeline: --second-layer block;
+    animation-timeline: --second-layer;
+    animation-range: 140% 240%;
+    z-index: 4;
+  }
+
+  section {
+    position: fixed;
+    width: 100%;
+    animation: horizontalScroll linear both;
+  }
+
+  @keyframes horizontalScroll {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-101%);
+    }
+  }
+
+  main {
+    padding-top: 56px;
+    height: 200vh;
+  }
 }
