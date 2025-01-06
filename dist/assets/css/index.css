@@ -53,16 +53,6 @@ body {
   top: 1rem;
   background-color: white;
 }
-@supports (animation-timeline: scroll()) {
-  .header {
-    width: 100%;
-    background-color: white;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    top: 0;
-    border-radius: 0;
-  }
-}
 .header__logo {
   font-size: 22px;
   font-weight: bold;
@@ -222,10 +212,6 @@ body {
   background-image: url("/assets/img/cat.png");
 }
 
-main {
-  padding-top: 56px;
-}
-
 @supports (animation-timeline: scroll()) {
   .hero {
     height: 100vh;
@@ -325,7 +311,6 @@ main {
     }
   }
   main {
-    padding-top: 56px;
     height: 200vh;
   }
 }

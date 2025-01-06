@@ -56,10 +56,6 @@
   background-image: url("/assets/img/cat.png");
 }
 
-main {
-  padding-top: 56px;
-}
-
 @supports (animation-timeline: scroll()) {
   .hero {
     height: 100vh;
@@ -143,7 +139,6 @@ main {
   }
 
   main {
-    padding-top: 56px;
     height: 200vh;
   }
 }
