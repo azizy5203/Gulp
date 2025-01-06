@@ -6,6 +6,7 @@ import gulpSass from "gulp-sass";
 import pug from "gulp-pug";
 import browserSync from "browser-sync";
 import terser from "gulp-terser";
+import sourcemaps from "gulp-sourcemaps";
 import imagemin, { gifsicle, mozjpeg, optipng, svgo } from "gulp-imagemin";
 
 const bs = browserSync.create();
@@ -26,9 +27,11 @@ gulp.task("html", function () {
 gulp.task("sass", function () {
   return gulp
     .src(["src/assets/scss/**/index.scss", "src/assets/css/**/*.css"])
-    .pipe(sass.sync({}).on("error", sass.logError))
+    .pipe(sourcemaps.init())
+    .pipe(sass.sync({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(concat("index.css"))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist/assets/css/"))
     .pipe(bs.stream());
 });
