@@ -1,25 +1,55 @@
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-light.ttf") format("truetype");
+  src: url("/assets/fonts/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+  src: url("/assets/fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-SemiBold.ttf") format("truetype");
+  src: url("/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  src: url("/assets/fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
+}
+
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-medium.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-regular.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-semiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+h1 {
+  font-family: inherit;
 }

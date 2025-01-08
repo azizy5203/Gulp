@@ -7,26 +7,88 @@ import pug from "gulp-pug";
 import browserSync from "browser-sync";
 import terser from "gulp-terser";
 import sourcemaps from "gulp-sourcemaps";
-import imagemin, { gifsicle, mozjpeg, optipng, svgo } from "gulp-imagemin";
+import imagemin from "gulp-imagemin";
+import notify from "gulp-notify";
+import plumber from "gulp-plumber";
+import plumberNotifier from "gulp-plumber-notifier";
+import zip from "gulp-zip";
 
 const bs = browserSync.create();
 
 const sass = gulpSass(dartSass);
 
-gulp.task("html", function () {
+const locales = {
+  ar: {
+    lang: "ar",
+    langDir: "rtl",
+    baseUrl: "../dist/ar",
+    dest: "./dist/ar",
+  },
+  en: {
+    lang: "en",
+    langDir: "ltr",
+    baseUrl: "/",
+    dest: "./dist/en",
+  },
+};
+
+// gulp.task("html", function html(locale) {
+//   return gulp
+//     .src("src/pug/pages/**/*.pug")
+//     .pipe(plumber())
+//     .pipe(plumberNotifier())
+//     .pipe(
+//       pug({
+//         pretty: true,
+//         data: {
+//           lang: locale.lang,
+//           langDir: locale.langDir,
+//           baseUrl: locale.baseUrl,
+//         },
+//       })
+//     )
+//     .pipe(gulp.dest(locale.dest));
+// });
+
+function html(locale) {
   return gulp
     .src("src/pug/pages/**/*.pug")
+    .pipe(plumber())
+    .pipe(plumberNotifier())
     .pipe(
       pug({
         pretty: true,
+        data: {
+          lang: locale.lang,
+          langDir: locale.langDir,
+          baseUrl: locale.baseUrl,
+        },
       })
     )
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest(locale.dest));
+}
+
+gulp.task("generateLocalizedViews", function (done) {
+  html(locales.en);
+  html(locales.ar);
+  done();
+});
+gulp.task("generateDefaultView", function (done) {
+  html({ ...locales.en, dest: "./dist/" });
+  done();
 });
 
 gulp.task("sass", function () {
   return gulp
     .src(["src/assets/scss/**/index.scss", "src/assets/css/**/*.css"])
+    .pipe(
+      plumber({
+        errorHandler: notify.onError({
+          title: "Gulp Sass Error",
+          message: "Error: <%= error.message %>",
+        }),
+      })
+    )
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(autoprefixer({ cascade: false }))
@@ -58,6 +120,13 @@ gulp.task("img", function () {
     .pipe(gulp.dest("./dist/assets/img/"));
 });
 
+// gulp.task("copyFonts", function () {
+//   return gulp
+//     .src("src/assets/fonts/*.ttf")
+//     .pipe(gulp.dest("dist/assets/fonts/"))
+//     .pipe(bs.stream());
+// });
+
 gulp.task("dev", function () {
   bs.init({
     server: {
@@ -65,12 +134,19 @@ gulp.task("dev", function () {
     },
   });
 
-  gulp.watch(
-    ["src/assets/scss/**/*.scss", "src/assets/css/**/*.css"],
-    gulp.series("sass")
-  );
+  gulp
+    .watch(
+      ["src/assets/scss/**/*.scss", "src/assets/css/**/*.css"],
+      gulp.series("sass")
+    )
+    .on("change", bs.reload);
   gulp.watch("src/assets/js/*.js", gulp.series("js")).on("change", bs.reload);
-  gulp.watch("src/pug/**/*.pug", gulp.series("html")).on("change", bs.reload);
+  gulp
+    .watch("src/pug/**/*.pug", gulp.series("generateLocalizedViews"))
+    .on("change", bs.reload);
+  gulp
+    .watch("src/pug/**/*.pug", gulp.series("generateDefaultView"))
+    .on("change", bs.reload);
   gulp
     .watch(
       [
@@ -83,6 +159,29 @@ gulp.task("dev", function () {
     .on("change", bs.reload);
 });
 
+gulp.task("archive", function () {
+  return gulp.src("dist/**/*.*").pipe(zip("dist.zip")).pipe(gulp.dest("."));
+});
+
 // run all tasks
-gulp.task("default", gulp.series("sass", "js", "html", "img", "dev"));
-gulp.task("build", gulp.series("sass", "js", "html", "img"));
+gulp.task(
+  "default",
+  gulp.series(
+    "sass",
+    "js",
+    "generateDefaultView",
+    "generateLocalizedViews",
+    "img",
+    "dev"
+  )
+);
+gulp.task(
+  "build",
+  gulp.series(
+    "sass",
+    "js",
+    "generateDefaultView",
+    "generateLocalizedViews",
+    "img"
+  )
+);

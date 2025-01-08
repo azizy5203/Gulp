@@ -54,7 +54,7 @@
 
 .about {
   height: 100vh;
-  background-image: url("/assets/img/cat.png");
+  background-image: url("/assets/img/about-pattern.svg");
 }
 
 @supports (animation-timeline: scroll()) {
@@ -107,6 +107,7 @@
     &__title {
       // color: $secondary;
       font-size: 60px;
+      font-weight: 700;
     }
     &__subtitle {
       max-width: 70%;
@@ -117,11 +118,13 @@
 
   .about {
     height: 100vh;
-    background-image: url("/assets/img/cat.png");
+    background-image: url("/assets/img/about-pattern.svg");
+    background-size: 120%;
     view-timeline: --second-layer block;
     animation-timeline: --second-layer;
     animation-range: 140% 240%;
     z-index: 4;
+    padding: 10rem;
   }
 
   section {

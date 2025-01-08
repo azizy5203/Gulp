@@ -1,0 +1,10 @@
+.footer {
+  // ...existing code...
+  font-family: "Poppins", sans-serif;
+  // ...existing code...
+}
+
+body[lang="ar"] .footer {
+  font-family: "Cahnga", sans-serif;
+}
+// ...existing code...

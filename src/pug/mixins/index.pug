@@ -1,0 +1,8 @@
+mixin _(enText=" ",arText)
+    if lang==="en"
+        if enText!==" "
+            | #{enText} 
+        else
+            | #{arText}
+    else
+        | #{arText}
