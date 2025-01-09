@@ -120,12 +120,12 @@ gulp.task("img", function () {
     .pipe(gulp.dest("./dist/assets/img/"));
 });
 
-// gulp.task("copyFonts", function () {
-//   return gulp
-//     .src("src/assets/fonts/*.ttf")
-//     .pipe(gulp.dest("dist/assets/fonts/"))
-//     .pipe(bs.stream());
-// });
+gulp.task("copyFonts", function () {
+  return gulp
+    .src("src/assets/fonts/*.ttf", { encoding: false })
+    .pipe(gulp.dest("dist/assets/fonts/"))
+    .pipe(bs.stream());
+});
 
 gulp.task("dev", function () {
   bs.init({
@@ -172,6 +172,7 @@ gulp.task(
     "generateDefaultView",
     "generateLocalizedViews",
     "img",
+    "copyFonts",
     "dev"
   )
 );
@@ -182,6 +183,7 @@ gulp.task(
     "js",
     "generateDefaultView",
     "generateLocalizedViews",
-    "img"
+    "img",
+    "copyFonts"
   )
 );
