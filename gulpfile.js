@@ -80,7 +80,7 @@ gulp.task("generateDefaultView", function (done) {
 
 gulp.task("sass", function () {
   return gulp
-    .src(["src/assets/scss/**/index.scss", "src/assets/css/**/index.css"])
+    .src(["src/assets/scss/**/index.scss", "src/assets/css/**/*.css"])
     .pipe(
       plumber({
         errorHandler: notify.onError({

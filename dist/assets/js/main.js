@@ -1,1 +1,0 @@
-let heroSwiper;function initHeroSwiper(){heroSwiper=new Swiper("heroSwiper__swiper",{})}

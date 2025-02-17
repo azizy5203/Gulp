@@ -280,21 +280,33 @@ html[dir=ltr] .header__lang-changer {
 }
 .heroSwiper__swiper.swiper {
   height: 100vh;
-  max-width: 80vw;
 }
 .heroSwiper__swiper.swiper .swiper-wrapper {
-  max-width: 80vw;
   min-height: 100%;
 }
 .heroSwiper__swiper.swiper .swiper-slide {
-  border: 1px solid red;
-}
-.heroSwiper__swiper.swiper .swiper-slide img {
   width: 100%;
   max-width: 100%;
   height: 100%;
+  position: relative;
+}
+.heroSwiper__swiper.swiper .swiper-slide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+}
+.heroSwiper__swiper-slide-video {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=index.css.map */

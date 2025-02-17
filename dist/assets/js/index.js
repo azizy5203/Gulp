@@ -1,1 +1,1 @@
-let heroSwiper;function initHeroSwiper(){heroSwiper=new Swiper(".heroSwiper",{slidesPerView:1}),alert("dd")}
+let heroSwiper;function initHeroSwiper(){heroSwiper=new Swiper(".heroSwiper__swiper",{slidesPerView:1,loop:!0,speed:1500,effect:"fade",fadeEffect:{crossFade:!0},autoplay:{delay:3e3,disableOnInteraction:!1}})}

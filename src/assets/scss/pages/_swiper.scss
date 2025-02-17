@@ -2,20 +2,34 @@
   height: 100vh;
   &__swiper.swiper {
     height: 100vh;
-    max-width: 80vw;
     .swiper-wrapper {
-      max-width: 80vw;
       min-height: 100%;
     }
     .swiper-slide {
-      border: 1px solid red;
-      img {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
         width: 100%;
-        max-width: 100%;
         height: 100%;
-        object-fit: cover;
+        z-index: 2;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        backdrop-filter: blur(3px);
+        // -webkit-backdrop-filter: blur(5px);
       }
     }
+  }
+
+  &__swiper-slide-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
   }
 
   //   z-index: 5;

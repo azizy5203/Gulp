@@ -1,7 +1,16 @@
 let heroSwiper;
 function initHeroSwiper() {
-  heroSwiper = new Swiper("heroSwiper__swiper", {
-    // slidesPerView: 1,
+  heroSwiper = new Swiper(".heroSwiper__swiper", {
+    slidesPerView: 1,
+    loop: true,
+    speed: 1500,
+    // parallax: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
   });
 }
 
