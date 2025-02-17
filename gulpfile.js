@@ -100,10 +100,10 @@ gulp.task("sass", function () {
 
 gulp.task("js", function () {
   return gulp
-    .src("src/assets/js")
-    .pipe(concat("main.js"))
+    .src("src/assets/js/*.js")
+    .pipe(concat("index.js"))
     .pipe(terser())
-    .pipe(gulp.dest("./dist/assets/js/index.js"));
+    .pipe(gulp.dest("./dist/assets/js/"));
 });
 
 gulp.task("img", function () {

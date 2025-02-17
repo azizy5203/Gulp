@@ -1,10 +1,9 @@
 let heroSwiper;
 function initHeroSwiper() {
   heroSwiper = new Swiper("heroSwiper__swiper", {
-    slidesPerView: 1,
+    // slidesPerView: 1,
   });
 }
-// alert("dd");
 
 // const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll("nav a");
