@@ -7,7 +7,12 @@ html(lang=lang,dir=langDir)
     meta(charset='utf-8')
     meta(name='description', content='My Pug Template Description')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='/assets/css/index.css')
-    script(defer,src="/assets/js/index.js")
+    link(rel='stylesheet' href= 'assets/css/swiper-bundle.min.css')
+    link(rel='stylesheet', href='assets/css/index.css')
+   
+    
+    
   body
     block content
+    block scripts
+      

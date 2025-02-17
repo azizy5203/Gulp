@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-medium.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-regular.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-semiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Changa";
+  src: url("/assets/fonts/Changa-bold.ttf") format("truetype");
+  font-weight: 700;
+}
+h1 {
+  font-family: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html[dir=rtl] body {
+  font-family: "Changa", "Poppins", ui-sans-serif, sans-serif;
+}
+html[dir=ltr] body {
+  font-family: "Poppins", "Changa", ui-sans-serif, sans-serif;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  padding: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  width: 75%;
+  box-shadow: 0 1px 10px 1px rgba(145, 144, 144, 0.25);
+  top: 1rem;
+  background-color: white;
+}
+.header__nav-lang-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+html[dir=rtl] .header__lang-changer {
+  margin-right: 4rem;
+}
+html[dir=ltr] .header__lang-changer {
+  margin-left: 4rem;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1e40af;
+}
+.header__nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+}
+.header__nav-link {
+  text-decoration: none;
+  color: #1e40af;
+  transition: all 0.1s ease-in-out;
+  display: inline-block;
+  font-weight: 500;
+}
+.header__nav-link--active {
+  border-bottom: 1px solid currentColor;
+  color: #194070;
+  transform: scale(1.2);
+}
+
+@keyframes showShadow {
+  0% {
+    box-shadow: 0 0px 0px 0px rgba(145, 144, 144, 0);
+    top: 0;
+    background-color: transparent;
+  }
+  100% {
+    box-shadow: 0 1px 10px 1px rgba(145, 144, 144, 0.25);
+    top: 1rem;
+    background-color: white;
+  }
+}
+.button {
+  display: inline-flex;
+  gap: 0.5rem;
+  background-color: #1e40af;
+  color: #bfdbfe;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.15);
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15 all ease-in-out;
+}
+.button:hover {
+  border-color: currentColor;
+}
+
+.hero {
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e40af;
+  z-index: 2;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/img/hero-pattern.svg");
+  background-size: 120%;
+  background-position: center center;
+  z-index: 3;
+}
+.hero__content {
+  z-index: 5;
+  position: relative;
+  color: #bfdbfe;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.hero__title {
+  font-size: 60px;
+}
+.hero__subtitle {
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 22px;
+}
+
+.about {
+  height: 100vh;
+  background-image: url("/assets/img/about-pattern.svg");
+}
+
+.heroSwiper {
+  height: 100vh;
+}
+.heroSwiper-slide {
+  border: 1px solid red;
+}/*# sourceMappingURL=index.css.map */

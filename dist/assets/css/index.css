@@ -275,109 +275,26 @@ html[dir=ltr] .header__lang-changer {
   background-image: url("/assets/img/about-pattern.svg");
 }
 
-@supports (animation-timeline: scroll()) {
-  .hero {
-    height: 100vh;
-    view-timeline: --first-layer block;
-    animation-timeline: --first-layer;
-    animation-range: entry 100% cover 90%;
-    z-index: 5;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1e40af;
-    z-index: 2;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("/assets/img/hero-pattern.svg");
-    background-size: 120%;
-    background-position: center center;
-    z-index: 3;
-  }
-  .hero__content {
-    z-index: 5;
-    position: relative;
-    color: #bfdbfe;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    gap: 2rem;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  .hero__title {
-    font-size: 60px;
-    font-weight: 700;
-  }
-  .hero__subtitle {
-    max-width: 70%;
-    margin: 0 auto;
-    font-size: 22px;
-  }
-  .about {
-    height: 100vh;
-    background-image: url("/assets/img/about-pattern.svg");
-    background-size: 120%;
-    view-timeline: --second-layer block;
-    animation-timeline: --second-layer;
-    animation-range: 140% 240%;
-    z-index: 4;
-    padding: 10rem;
-  }
-  section {
-    position: fixed;
-    width: 100%;
-    -webkit-animation: horizontalScroll linear both;
-    animation: horizontalScroll linear both;
-  }
-  @-webkit-keyframes horizontalScroll {
-    from {
-      -webkit-transform: translateX(0%);
-      transform: translateX(0%);
-    }
-    to {
-      -webkit-transform: translateX(-101%);
-      transform: translateX(-101%);
-    }
-  }
-  @keyframes horizontalScroll {
-    from {
-      -webkit-transform: translateX(0%);
-      transform: translateX(0%);
-    }
-    to {
-      -webkit-transform: translateX(-101%);
-      transform: translateX(-101%);
-    }
-  }
-  main {
-    height: 200vh;
-  }
+.heroSwiper {
+  height: 100vh;
 }
+.heroSwiper__swiper.swiper {
+  height: 100vh;
+  max-width: 80vw;
+}
+.heroSwiper__swiper.swiper .swiper-wrapper {
+  max-width: 80vw;
+  min-height: 100%;
+}
+.heroSwiper__swiper.swiper .swiper-slide {
+  border: 1px solid red;
+}
+.heroSwiper__swiper.swiper .swiper-slide img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=index.css.map */

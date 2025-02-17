@@ -1,1 +1,1 @@
-const sections=document.querySelectorAll("section"),navLinks=document.querySelectorAll("nav a"),observer=new IntersectionObserver(((e,r)=>{e.forEach((e=>{const r=e.target.id,s=document.querySelector(`nav a[href="#${r}"]`);e.isIntersecting?s?.classList.add("header__nav-link--active"):s?.classList.remove("header__nav-link--active")}))}),{threshold:.5});sections.forEach((e=>observer.observe(e)));
+let heroSwiper;function initHeroSwiper(){heroSwiper=new Swiper(".heroSwiper",{slidesPerView:1}),alert("dd")}

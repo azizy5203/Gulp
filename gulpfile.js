@@ -80,7 +80,7 @@ gulp.task("generateDefaultView", function (done) {
 
 gulp.task("sass", function () {
   return gulp
-    .src(["src/assets/scss/**/index.scss", "src/assets/css/**/*.css"])
+    .src(["src/assets/scss/**/index.scss", "src/assets/css/**/index.css"])
     .pipe(
       plumber({
         errorHandler: notify.onError({
@@ -100,10 +100,10 @@ gulp.task("sass", function () {
 
 gulp.task("js", function () {
   return gulp
-    .src("src/assets/js/*js")
-    .pipe(concat("index.js"))
+    .src("src/assets/js")
+    .pipe(concat("main.js"))
     .pipe(terser())
-    .pipe(gulp.dest("./dist/assets/js/"));
+    .pipe(gulp.dest("./dist/assets/js/index.js"));
 });
 
 gulp.task("img", function () {

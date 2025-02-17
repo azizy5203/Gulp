@@ -1,0 +1,18 @@
+extends ../layouts/base
+
+block scripts
+  script(src="assets/js/swiper-bundle.min.js")
+  script(src="assets/js/index.js") 
+  script.
+    initHeroSwiper()
+
+block content
+  include ../components/header
+  
+
+
+  main
+    include ../components/swiper/hero
+    
+
+
