@@ -1,4 +1,5 @@
 include ../mixins/index
+include ../mixins/header
 doctype html
 html(lang=lang,dir=langDir)
 
@@ -8,6 +9,7 @@ html(lang=lang,dir=langDir)
     meta(name='description', content='My Pug Template Description')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet' href= 'assets/css/swiper-bundle.min.css')
+    link(rel='stylesheet' href= 'assets/css/aos.css')
     link(rel='stylesheet', href='assets/css/index.css')
    
     
@@ -15,4 +17,7 @@ html(lang=lang,dir=langDir)
   body
     block content
     block scripts
+    script(src="assets/js/aos.js")
+    script.
+      AOS.init();
       

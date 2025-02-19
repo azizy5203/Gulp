@@ -4,12 +4,15 @@ block scripts
   script(src="assets/js/swiper-bundle.min.js")
   script(src="assets/js/index.js") 
   script.
+    initClientsSwiper()
     initHeroSwiper()
 
 block content
-  include ../components/header
+  +header('/swiper.html')
   
-  main
+  main(class="swiper-page")
+    include ../components/swiper/hero
+    include ../components/swiper/clients
     include ../components/swiper/hero
     
 

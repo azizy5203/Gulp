@@ -1,6 +1,6 @@
 let heroSwiper;
 function initHeroSwiper() {
-  heroSwiper = new Swiper(".heroSwiper__swiper", {
+  heroSwiper = new Swiper(".hero-swiper__swiper", {
     slidesPerView: 1,
     loop: true,
     speed: 1500,
@@ -11,6 +11,23 @@ function initHeroSwiper() {
       delay: 3000,
       disableOnInteraction: false,
     },
+  });
+}
+
+let clientsSwiper;
+function initClientsSwiper() {
+  clientsSwiper = new Swiper(".clients-swiper__swiper", {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    centeredSlides: true,
+    speed: 6500,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+    allowTouchMove: false,
+    disableOnInteraction: true,
   });
 }
 

@@ -6,6 +6,7 @@
     <meta name="description" content="My Pug Template Description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
     <link rel="stylesheet" href="assets/css/index.css">
   </head>
   <body>
@@ -13,24 +14,54 @@
       <div class="header__nav-lang-wrapper">
         <nav class="header__nav">
           <ul class="header__nav-list">
-            <li class="header__nav-item"> <a class="header__nav-link" href="/swiper.html">Swiper</a></li>
+            <li class="header__nav-item"> <a class="header__nav-link" href="/">Home</a></li>
+            <li class="header__nav-item"> <a class="header__nav-link header__nav-link--active" href="/swiper.html">Swiper</a></li>
             <li class="header__nav-item"> <a class="header__nav-link" href="#services">AI Blocks</a></li>
             <li class="header__nav-item"> <a class="header__nav-link" href="#contact">Demos</a></li>
-            <li class="header__nav-item"> <a class="header__nav-link" href="#contact">Help</a></li>
             <li class="header__nav-item"> <a class="header__nav-link" href="#contact">Pricing</a></li>
           </ul>
         </nav><a class="header__lang-changer" href="/ar">العربية</a>
       </div>
     </header>
-    <main>
-      <section class="heroSwiper">
-        <div class="heroSwiper__swiper swiper">
+    <main class="swiper-page">
+      <section class="hero-swiper">
+        <h1 class="hero-swiper__title">Lorem ipsum dolor sit amet.</h1>
+        <div class="hero-swiper__swiper swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <video class="heroSwiper__swiper-slide-video" src="/assets/video/swiper-hero.mp4" autoplay loop muted playsInline></video>
+              <video class="hero-swiper__swiper-slide-video" src="/assets/video/swiper-hero.mp4" autoplay loop muted playsInline></video>
             </div>
             <div class="swiper-slide">
-              <video class="heroSwiper__swiper-slide-video" src="/assets/video/swiper-hero-two.mp4" autoplay loop muted playsInline></video>
+              <video class="hero-swiper__swiper-slide-video" src="/assets/video/swiper-hero-two.mp4" autoplay loop muted playsInline></video>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="clients-swiper">
+        <div class="clients-swiper__swiper swiper" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_01.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_02.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_03.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_04.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_05.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_06.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_07.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_08.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_09.png"></div>
+            <div class="swiper-slide"><img class="clients-swiper__swiper-slide-img" src="/assets/img/client_010.png"></div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-swiper">
+        <h1 class="hero-swiper__title">Lorem ipsum dolor sit amet.</h1>
+        <div class="hero-swiper__swiper swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <video class="hero-swiper__swiper-slide-video" src="/assets/video/swiper-hero.mp4" autoplay loop muted playsInline></video>
+            </div>
+            <div class="swiper-slide">
+              <video class="hero-swiper__swiper-slide-video" src="/assets/video/swiper-hero-two.mp4" autoplay loop muted playsInline></video>
             </div>
           </div>
         </div>
@@ -39,8 +70,11 @@
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/index.js"> </script>
     <script>
+      initClientsSwiper()
       initHeroSwiper()
       
     </script>
+    <script src="assets/js/aos.js"></script>
+    <script>AOS.init();</script>
   </body>
 </html>

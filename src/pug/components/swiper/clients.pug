@@ -1,0 +1,6 @@
+section.clients-swiper
+    div(class="clients-swiper__swiper swiper",data-aos="fade-up")
+        div(class="swiper-wrapper")
+            each index, val in Array(10)
+                div(class="swiper-slide")
+                    img(class="clients-swiper__swiper-slide-img",src=`/assets/img/client_0${val+1}.png`)
