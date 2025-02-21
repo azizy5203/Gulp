@@ -53,25 +53,33 @@
           </div>
         </div>
       </section>
-      <section class="hero-swiper">
-        <h1 class="hero-swiper__title">Lorem ipsum dolor sit amet.</h1>
-        <div class="hero-swiper__swiper swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <video class="hero-swiper__swiper-slide-video" src="/assets/video/swiper-hero.mp4" autoplay loop muted playsInline></video>
+      <div class="tabs-swiper">
+        <div class="tabs-swiper__swiper swiper">
+          <div class="parallax-bg" style="background-image:url('/assets/img/slide.jpg')"></div>
+          <div class="tabs-swiper__swiper-wrapper swiper-wrapper">
+            <div class="tabs-swiper__swiper-slide swiper-slide">
+              <p>ipisicing elit.adipisicing elit..adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit..adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.</p>
             </div>
-            <div class="swiper-slide">
-              <video class="hero-swiper__swiper-slide-video" src="/assets/video/swiper-hero-two.mp4" autoplay loop muted playsInline></video>
+            <div class="tabs-swiper__swiper-slide swiper-slide">
+              <p>t amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.</p>
+            </div>
+            <div class="tabs-swiper__swiper-slide swiper-slide">
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit..adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit..adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.adipisicing elit.adipisicing elit.</p>
             </div>
           </div>
+          <div class="tabs-swiper__swiper-pagination">
+            <button class="tabs-swiper__pagination-next">next</button>
+            <button class="tabs-swiper__pagination-prev">prev</button>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/index.js"> </script>
     <script>
-      initClientsSwiper()
       initHeroSwiper()
+      initClientsSwiper()
+      initTabsSwiper()
       
     </script>
     <script src="assets/js/aos.js"></script>

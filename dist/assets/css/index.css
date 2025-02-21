@@ -402,4 +402,35 @@ html[dir=ltr] .header__lang-changer {
   filter: grayscale(0);
 }
 
+.tabs-swiper {
+  margin-block: 4rem;
+  padding: 0.5rem;
+}
+.tabs-swiper__swiper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.tabs-swiper__swiper-wrapper {
+  padding: 0.5rem;
+}
+.tabs-swiper__swiper-slide {
+  -webkit-transition-property: height, -webkit-transform;
+  transition-property: height, -webkit-transform;
+  transition-property: transform, height;
+  transition-property: transform, height, -webkit-transform;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+  border: 2px solid blue;
+}
+.tabs-swiper__swiper-slide-img.low {
+  height: 100px;
+}
+.tabs-swiper__swiper-slide-img.mid {
+  height: 200px;
+}
+.tabs-swiper__swiper-slide-img.high {
+  height: 400px;
+}
+
 /*# sourceMappingURL=index.css.map */

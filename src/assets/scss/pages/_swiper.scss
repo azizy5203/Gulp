@@ -86,3 +86,33 @@
     }
   }
 }
+
+.tabs-swiper {
+  margin-block: 4rem;
+  // min-height: 200px;
+  padding: 0.5rem;
+  &__swiper {
+    height: fit-content;
+  }
+  &__swiper-wrapper {
+    padding: 0.5rem;
+  }
+  &__swiper-slide {
+    transition-property: transform, height;
+    transition: height 0.5s ease-in-out;
+    border: 2px solid blue;
+    // height: fit-content;
+    // min-height: auto !important;
+  }
+  &__swiper-slide-img {
+    &.low {
+      height: 100px;
+    }
+    &.mid {
+      height: 200px;
+    }
+    &.high {
+      height: 400px;
+    }
+  }
+}

@@ -31,6 +31,23 @@ function initClientsSwiper() {
   });
 }
 
+let tabsSwiper;
+function initTabsSwiper() {
+  tabsSwiper = new Swiper(".tabs-swiper__swiper", {
+    loop: true,
+    slidesPerView: 1,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    parallax: true,
+    autoplay: false,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: ".tabs-swiper__pagination-next",
+      prevEl: ".tabs-swiper__pagination-prev",
+    },
+  });
+}
+
 // const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll("nav a");
 
