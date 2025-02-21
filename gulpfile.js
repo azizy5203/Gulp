@@ -12,6 +12,8 @@ import notify from "gulp-notify";
 import plumber from "gulp-plumber";
 import plumberNotifier from "gulp-plumber-notifier";
 import zip from "gulp-zip";
+import tailwindcss from "tailwindcss";
+import postcss from "gulp-postcss";
 
 const bs = browserSync.create();
 
@@ -80,7 +82,7 @@ gulp.task("generateDefaultView", function (done) {
 
 gulp.task("sass", function () {
   return gulp
-    .src(["src/assets/scss/**/index.scss", "src/assets/css/**/*.css"])
+    .src(["src/assets/scss/**/index.scss", "src/assets/css/index.css"])
     .pipe(
       plumber({
         errorHandler: notify.onError({
@@ -92,6 +94,7 @@ gulp.task("sass", function () {
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(autoprefixer({ cascade: false }))
+    .pipe(postcss([tailwindcss("./tailwind.config.js")]))
     .pipe(concat("index.css"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist/assets/css/"))
