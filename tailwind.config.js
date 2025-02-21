@@ -16,7 +16,12 @@
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,php,pug}"],
+  // mode: "jit",
+  content: [
+    "./src/pug/**/*.pug",
+    "./src/assets/js/**/*.js",
+    "./src/assets/scss/**/*.scss",
+  ],
   darkMode: "class",
   theme: {
     extend: {},
@@ -36,9 +41,6 @@ export default {
       "2xl": "1.5rem",
       "3xl": "1.75rem",
       "4xl": "2rem",
-    },
-    colors: {
-      primary: "#16707A",
     },
     boxShadow: {
       mainShadow: "0px 4px 25px 0px #0000001A",

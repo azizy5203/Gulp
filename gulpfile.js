@@ -14,6 +14,7 @@ import plumberNotifier from "gulp-plumber-notifier";
 import zip from "gulp-zip";
 import tailwindcss from "tailwindcss";
 import postcss from "gulp-postcss";
+import cssnano from "cssnano";
 
 const bs = browserSync.create();
 
@@ -71,7 +72,7 @@ function html(locale) {
 }
 
 gulp.task("generateLocalizedViews", function (done) {
-  html(locales.en);
+  // html(locales.en);
   html(locales.ar);
   done();
 });
@@ -82,7 +83,7 @@ gulp.task("generateDefaultView", function (done) {
 
 gulp.task("sass", function () {
   return gulp
-    .src(["src/assets/scss/**/index.scss", "src/assets/css/index.css"])
+    .src(["src/assets/scss/**/*.scss", "src/assets/css/index.css"])
     .pipe(
       plumber({
         errorHandler: notify.onError({
@@ -92,9 +93,9 @@ gulp.task("sass", function () {
       })
     )
     .pipe(sourcemaps.init())
-    .pipe(sass.sync({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(sass.sync().on("error", sass.logError))
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(postcss([tailwindcss("./tailwind.config.js")]))
+    .pipe(postcss([tailwindcss("./tailwind.config.js"), cssnano()]))
     .pipe(concat("index.css"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist/assets/css/"))
@@ -145,10 +146,14 @@ gulp.task("dev", function () {
     .on("change", bs.reload);
   gulp.watch("src/assets/js/*.js", gulp.series("js")).on("change", bs.reload);
   gulp
-    .watch("src/pug/**/*.pug", gulp.series("generateLocalizedViews"))
-    .on("change", bs.reload);
-  gulp
-    .watch("src/pug/**/*.pug", gulp.series("generateDefaultView"))
+    .watch(
+      "src/pug/**/*.pug",
+      gulp.series(
+        "generateLocalizedViews",
+        "generateDefaultView",
+        "sass" // Add CSS rebuild after HTML generation
+      )
+    )
     .on("change", bs.reload);
   gulp
     .watch(
@@ -170,10 +175,10 @@ gulp.task("archive", function () {
 gulp.task(
   "default",
   gulp.series(
-    "sass",
-    "js",
     "generateDefaultView",
     "generateLocalizedViews",
+    "sass",
+    "js",
     "img",
     "copyFonts",
     "dev"
@@ -182,10 +187,10 @@ gulp.task(
 gulp.task(
   "build",
   gulp.series(
-    "sass",
-    "js",
     "generateDefaultView",
     "generateLocalizedViews",
+    "sass",
+    "js",
     "img",
     "copyFonts"
   )

@@ -41,10 +41,21 @@ function initTabsSwiper() {
     parallax: true,
     autoplay: false,
     spaceBetween: 0,
-    navigation: {
-      nextEl: ".tabs-swiper__pagination-next",
-      prevEl: ".tabs-swiper__pagination-prev",
+    autoHeight: true,
+    speed: 800,
+    simulateTouch: false,
+    pagination: {
+      el: ".tabs-swiper__pagination",
+      // type: "bullets",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}">Page no.${index + 1}</span>`;
+      },
     },
+    // navigation: {
+    //   nextEl: ".tabs-swiper__pagination-next",
+    //   prevEl: ".tabs-swiper__pagination-prev",
+    // },
   });
 }
 
