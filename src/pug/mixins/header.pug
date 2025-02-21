@@ -5,13 +5,13 @@ mixin header(activeLink)
             nav.header__nav
                 ul.header__nav-list
                     li.header__nav-item 
-                        a(class="header__nav-link" + (activeLink === "/" ? " header__nav-link--active" : ""), href="/") Home
+                        a(class="header__nav-link" + (activeLink === "/" ? " header__nav-link--active" : ""), href=lang=="ar"?'/ar':'/') Home
                     li.header__nav-item 
-                        a(class="header__nav-link" + (activeLink === "/swiper.html" ? " header__nav-link--active" : ""), href="/swiper.html") Swiper
+                        a(class="header__nav-link" + (activeLink === "/swiper.html" ? " header__nav-link--active" : ""), href="swiper.html") Swiper
                     li.header__nav-item 
                         a(class="header__nav-link" + (activeLink === "/Demos" ? " header__nav-link--active" : ""), href="#services") AI Blocks
                     li.header__nav-item 
                         a(class="header__nav-link" + (activeLink === "/Demos" ? " header__nav-link--active" : ""), href="#contact") Demos
                     li.header__nav-item 
                         a(class="header__nav-link" + (activeLink === "/Demos" ? " header__nav-link--active" : ""), href="#contact") Pricing
-            a.header__lang-changer(href= lang==="ar"?'/':'/ar') #{lang==="ar"?"English":"العربية"}
+            a.header__lang-changer(href= lang=="ar"? (activeLink === "/" ? "/" : activeLink) : `/ar${activeLink === "/" ? "" : activeLink}`) #{lang==="ar"?"English":"العربية"}

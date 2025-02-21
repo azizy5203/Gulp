@@ -21,13 +21,13 @@ const locales = {
   ar: {
     lang: "ar",
     langDir: "rtl",
-    baseUrl: "../dist/ar",
+    baseUrl: "../",
     dest: "./dist/ar",
   },
   en: {
     lang: "en",
     langDir: "ltr",
-    baseUrl: "/",
+    baseUrl: "",
     dest: "./dist/en",
   },
 };
