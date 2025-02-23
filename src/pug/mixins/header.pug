@@ -14,4 +14,5 @@ mixin header(activeLink)
                         a(class="header__nav-link" + (activeLink === "/Demos" ? " header__nav-link--active" : ""), href="#contact") Demos
                     li.header__nav-item 
                         a(class="header__nav-link" + (activeLink === "/Demos" ? " header__nav-link--active" : ""), href="#contact") Pricing
-            a.header__lang-changer(href= lang=="ar"? (activeLink === "/" ? "/" : activeLink) : `/ar${activeLink === "/" ? "" : activeLink}`) #{lang==="ar"?"English":"العربية"}
+            a.header__lang-changer(href= lang=="ar"? (activeLink === "/" ? "/" : activeLink) : `/ar${activeLink === "/" ? "" : activeLink}`)
+                img(width="20" src=`https://flagicons.lipis.dev/flags/4x3/${lang == "ar" ? "eg" : "us"}.svg` alt=`${lang === "ar" ? "Arabic" : "English"} language`)
