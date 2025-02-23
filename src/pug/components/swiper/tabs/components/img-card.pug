@@ -1,0 +1,6 @@
+mixin img-card(titleEn,titleAr,descriptionEn,descriptionAr,imgSrc)
+    div(class="img-card border border-pink-700 rounded-md overflow-hidden")
+        img(src=imgSrc, alt="")
+        div(class="img-card__content flex flex-col gap-3 py-4 px-3")
+            h5= lang=='ar'?titleAr:titleEn
+            p(class="font-thin text-sm")= lang=='ar'?descriptionAr:descriptionEn

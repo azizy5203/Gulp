@@ -7,6 +7,7 @@ block scripts
     initHeroSwiper()
     initClientsSwiper()
     initTabsSwiper()
+    initGridTabs()
 
 block content
   +header('/swiper.html')
@@ -14,9 +15,9 @@ block content
   main(class="swiper-page")
     include ../components/swiper/hero
     include ../components/swiper/clients
-    include ../components/swiper/tabs/tabs
-    include ../components/swiper/clients
-    include ../components/swiper/clients
+    include ../components/swiper/tabs/text-tabs
+    hr(class="border-t border-t-red-400")
+    include ../components/swiper/tabs/grid-tabs
     
 
 

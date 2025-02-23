@@ -38,14 +38,42 @@ function initTabsSwiper() {
     slidesPerView: 1,
     effect: "fade",
     fadeEffect: { crossFade: true },
+    // parallax: true,
+    autoplay: false,
+    spaceBetween: 0,
+    autoHeight: true,
+    // speed: 500,
+    simulateTouch: false,
+    pagination: {
+      el: ".tabs-swiper__pagination",
+      // type: "bullets",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}">Page no.${index + 1}</span>`;
+      },
+    },
+    // navigation: {
+    //   nextEl: ".tabs-swiper__pagination-next",
+    //   prevEl: ".tabs-swiper__pagination-prev",
+    // },
+  });
+}
+
+let gridTabs;
+function initGridTabs() {
+  gridTabs = new Swiper(".grid-tabs-swiper__swiper", {
+    loop: true,
+    slidesPerView: 1,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
     parallax: true,
     autoplay: false,
     spaceBetween: 0,
     autoHeight: true,
-    speed: 800,
+    speed: 500,
     simulateTouch: false,
     pagination: {
-      el: ".tabs-swiper__pagination",
+      el: ".grid-tabs-swiper__pagination",
       // type: "bullets",
       clickable: true,
       renderBullet: function (index, className) {
