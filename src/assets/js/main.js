@@ -80,12 +80,15 @@ function initGridTabs() {
         return `<span class="${className}">Page no.${index + 1}</span>`;
       },
     },
-    // navigation: {
-    //   nextEl: ".tabs-swiper__pagination-next",
-    //   prevEl: ".tabs-swiper__pagination-prev",
-    // },
   });
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  initHeroSwiper();
+  initClientsSwiper();
+  initTabsSwiper();
+  initGridTabs();
+});
 
 // const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll("nav a");
